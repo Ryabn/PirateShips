@@ -49,25 +49,25 @@ function displayPlunder(){
 //display amt of gold user has
 function buyItem(){
     plunder -= price;
-    var currentLevel = strgLocDat.getItem(currentIdGeneral);
-    strgLocDat.setItem(currentIdGeneral, currentLevel);
+    strgLocDat.setItem(currentIdGeneral, parseInt(currentIdSub.replace( /^\D+/g, '')));
     strgLocDat.setItem('plunder', plunder);
     closePayment();
+    displayBuyButton();
     displayPlunder();
 }
 //called when user confirms purchase when wrapper pops up
 //actual process of buying item
 function displayBuyButton(){
-    console.log(parseInt(strgLocDat.getItem(currentIdGeneral)));
-    console.log(parseInt(currentIdSub.replace( /^\D+/g, ''))-1);
-    if(parseInt(strgLocDat.getItem(currentIdGeneral)) == parseInt(currentIdSub.replace( /^\D+/g, ''))-1){
-        document.getElementById('equipAction').innerHTML = "Buy " + textDat['general'][currentIdGeneral][0][currentIdSub][2];
+    if(parseInt(strgLocDat.getItem(currentIdGeneral))+1 == parseInt(currentIdSub.replace( /^\D+/g, ''))){
+        document.getElementById('equipAction').innerHTML = textDat['general'][currentIdGeneral][0][currentIdSub][2] + " gold";
+        document.getElementById('equipAction').style.backgroundColor = null;
     }else if(parseInt(strgLocDat.getItem(currentIdGeneral)) > parseInt(currentIdSub.replace( /^\D+/g, ''))-1){
         document.getElementById('equipAction').innerHTML = "Equip";
-        equipItem();
+        document.getElementById('equipAction').style.backgroundColor = "#5eaf4f";
     }
     else{
-        document.getElementById('equipAction').innerHTML = "Buy Last Upgrade First";
+        document.getElementById('equipAction').innerHTML = "Locked";
+        document.getElementById('equipAction').style.backgroundColor = "grey";
     }
 }
 //changes buy button (can buy, price, can't buy)
@@ -84,17 +84,15 @@ function loadEquipActionDiv(id){
 }
 //displays image of upgrade
 //called every time a new sub is selected
-function confirmPurchase(){
-    buyItem();
-    document.getElementById('confirmPurchaseWrapper').style.display = 'block';
-}
-//calls buy item and closes the wrapper
-//gets called when user presses yes on buying item
 function canBuyEquip(){
-    price = currentIdSub.replace( /^\D+/g, '');
-    price*=100;
-    if(plunder >= price){
-        confirmPurchase(price);
+    price = textDat['general'][currentIdGeneral][0][currentIdSub][2];
+    console.log(price);
+    if(document.getElementById('equipAction').innerHTML.valueOf() === "Equip"){
+        equipItem();
+    }else if(document.getElementById('equipAction').innerHTML.valueOf() === "Locked"){
+        alert("You must buy/have the previous upgrade before you can buy this upgrade.");
+    }else if(plunder >= price){
+        document.getElementById('confirmPurchaseWrapper').style.display = 'block';
     }else{
         alert("Ye's got no plunder! Raid some more ships n' I'll get ye what ye needs.");
     }
