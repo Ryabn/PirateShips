@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+<html lang="en_US">
+    <head>
+        <meta charset="UTF-8">
+        <title>Pirate Battles</title>
+        <link rel="stylesheet" type="text/css" href="css/customize.css">
+        <script src="js/strgLoc.js"></script>
+        <script src="js/textData.js"></script>
+        <script src="js/customize.js"></script> 
+    </head>
+    <body onload="loadCustomize()">
+        <div class="list general">
+            <div id="cannonDamage" class="item" onclick="changeSelected('cannonDamage')">
+                Higher Cannon Damage
+            </div>
+            <div id="cannonRange" class="item" onclick="changeSelected('cannonRange')">
+                Larger Cannon Range
+            </div>
+            <div id="moreCannons" class="item" onclick="changeSelected('moreCannons')">
+                More Cannons
+            </div>
+            <div id="rateOfFire" class="item" onclick="changeSelected('rateOfFire')">
+                Higher Fire Rate
+            </div>
+            <div id="shootFast" class="item" onclick="changeSelected('shootFast')">
+                Faster Cannon Shots
+            </div>
+            <div id="fasterBoat" class="item" onclick="changeSelected('fasterBoat')">
+                Faster Boat
+            </div>
+            <div id="rudder" class="item" onclick="changeSelected('rudder')">
+                Sharper Turns
+            </div>
+            <div id="defense" class="item" onclick="changeSelected('defense')">
+                Better Boat
+            </div>
+        </div>
+        <div id="subs" class="list subsection">
+            <div id="cannonDamageSub">
+                <div id="a1" class="item" onclick="changeSubSelected('a1')">
+                    Standard Cannons
+                </div>
+                <div id="a2" class="item" onclick="changeSubSelected('a2')">
+                    Big Cannons
+                </div>
+                <div id="a3" class="item" onclick="changeSubSelected('a3')">
+                    Bigger Cannons
+                </div>
+                <div id="a4" class="item" onclick="changeSubSelected('a4')">
+                    Pew-Pew Maker
+                </div>  
+                <div id="a5" class="item" onclick="changeSubSelected('a5')">
+                    The Big Shot
+                </div>
+                <div id="a6" class="item" onclick="changeSubSelected('a6')">
+                    Steel Reinforced Cannons
+                </div>
+                <div id="a7" class="item" onclick="changeSubSelected('a7')">
+                    These Guns
+                </div>
+            </div>
+            <div id="cannonRangeSub">
+                <div id="b1" class="item" onclick="changeSubSelected('b1')">
+                    Holes for Cannons
+                </div>
+                <div id="b2" class="item" onclick="changeSubSelected('b2')">
+                    Added Sights
+                </div>
+                <div id="b3" class="item" onclick="changeSubSelected('b3')">
+                    Captain's Eye Surgery
+                </div> 
+                <div id="b4" class="item" onclick="changeSubSelected('b4')">
+                    Crow's Nest
+                </div>
+                <div id="b5" class="item" onclick="changeSubSelected('b5')">
+                    The Silencer
+                </div>
+            </div>
+            <div id="moreCannonsSub">
+                <div id="c1" class="item" onclick="changeSubSelected('c1')">
+                    Standard Issue
+                </div>
+                <div id="c2" class="item" onclick="changeSubSelected('c2')">
+                    Why Not Have More?
+                </div>
+                <div id="c3" class="item" onclick="changeSubSelected('c3')">
+                    Double Barrel Cannons
+                </div>
+                <div id="c4" class="item" onclick="changeSubSelected('c4')">
+                    Guns...IN FRONT?
+                </div>  
+                <div id="c5" class="item" onclick="changeSubSelected('c5')">
+                    The Big One
+                </div>
+            </div>
+            <div id="rateOfFireSub">
+                <div id="d1" class="item" onclick="changeSubSelected('d1')">
+                    Understaffed
+                </div>
+                <div id="d2" class="item" onclick="changeSubSelected('d2')">
+                    Gunpowder Room
+                </div>
+                <div id="d3" class="item" onclick="changeSubSelected('d3')">
+                    More Men
+                </div>
+                <div id="d4" class="item" onclick="changeSubSelected('d4')">
+                    College Degree Minimum
+                </div>  
+                <div id="d5" class="item" onclick="changeSubSelected('d5')">
+                    Automated Systems
+                </div>
+                <div id="d6" class="item" onclick="changeSubSelected('d6')">
+                    Machine Guns
+                </div>
+            </div>
+            <div id="shootFastSub">
+                <div id="e1" class="item" onclick="changeSubSelected('e1')">
+                    I'm Lagging Mom!
+                </div>
+                <div id="e2" class="item" onclick="changeSubSelected('e2')">
+                    Lighter Cannon Balls
+                </div>
+                <div id="e3" class="item" onclick="changeSubSelected('e3')">
+                    Cannon Aerodynamics
+                </div>
+                <div id="e4" class="item" onclick="changeSubSelected('e4')">
+                    More Gunpowder
+                </div>  
+                <div id="e5" class="item" onclick="changeSubSelected('e5')">
+                    Fresh Gunpowder
+                </div>
+            </div>
+            <div id="fasterBoatSub">
+                <div id="f1" class="item" onclick="changeSubSelected('f1')">
+                    Paddles
+                </div>
+                <div id="f2" class="item" onclick="changeSubSelected('f2')">
+                    Long Viking Oars
+                </div>
+                <div id="f3" class="item" onclick="changeSubSelected('f3')">
+                    Bigger Sails
+                </div>
+                <div id="f4" class="item" onclick="changeSubSelected('f4')">
+                    Jet Engine
+                </div>  
+            </div>
+            <div id="rudderSub">
+                <div id="g1" class="item" onclick="changeSubSelected('g1')">
+                    Hope the Wind Changes
+                </div>
+                <div id="g2" class="item" onclick="changeSubSelected('g2')">
+                    Use Oars as a Rudder
+                </div>
+                <div id="g3" class="item" onclick="changeSubSelected('g3')">
+                    Finally Got a Rudder
+                </div>
+                <div id="g4" class="item" onclick="changeSubSelected('g4')">
+                    Metal Rudder
+                </div>  
+                <div id="g5" class="item" onclick="changeSubSelected('g5')">
+                    Motorized System
+                </div>
+            </div>
+            <div id="defenseSub">
+                <div id="h1" class="item" onclick="changeSubSelected('h1')">
+                    Paper Boat
+                </div>
+                <div id="h2" class="item" onclick="changeSubSelected('h2')">
+                    Wooden Boat
+                </div>
+                <div id="h3" class="item" onclick="changeSubSelected('h3')">
+                    Bigger Boat
+                </div>  
+                <div id="h4" class="item" onclick="changeSubSelected('h4')">
+                    Double Layered, Titanic Style
+                </div>
+                <div id="h5" class="item" onclick="changeSubSelected('h5')">
+                    Even Bigger Boat
+                </div>
+                <div id="h6" class="item" onclick="changeSubSelected('h6')">
+                    Huge Boat
+                </div>
+            </div>
+        </div>
+        <div class="details">
+            <div id="itemSpecifics">
+                <div id="itemsPicture">
+                </div>
+                <div id="itemDescription"> Select an upgrade to learn more about the item and it's benefits. </div>
+                <div id="itemStats"> Stats Displayed Here </div>
+                <div id="equipAction" class="equipButton" onclick="canBuyEquip()">
+                    Buy
+                </div>
+                <div class="plunderDisplay">
+                    <div class="plunderIcon"></div>
+                    <div id="displayPlunder"></div>
+                    <a href="index.html">
+                    <div class="backButton confirmButtonsDisplay"> Back </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="confirmPurchaseWrapper">
+            <div class="confirmationMessage">
+                <p>
+                    Are you sure you would like to purchase this upgrade? Once this action is done, it cannot be undone.
+                </p>
+                <div class="confirmButton confirmButtonsDisplay" onclick="buyItem()">
+                    Yes
+                </div>
+                <div class="cancelButton confirmButtonsDisplay" onclick="closePayment()">
+                    Cancel
+                </div>
+            </div>
+            
+        </div>
+    </body>
+</html>

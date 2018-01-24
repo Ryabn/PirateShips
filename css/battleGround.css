@@ -1,0 +1,9 @@
+@font-face{
+    font-family: "Macondo";
+    src: url('../fonts/Macondo/Macondo-Regular.ttf');
+}
+body{
+    margin: 0;
+    background-color: #4d73bc;
+    overflow: hidden;
+}
