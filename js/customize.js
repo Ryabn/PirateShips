@@ -49,7 +49,10 @@ function displayPlunder(){
 //display amt of gold user has
 function buyItem(){
     plunder -= price;
-    strgLocDat.setItem(currentIdGeneral, parseInt(currentIdSub.replace( /^\D+/g, '')));
+    window[currentIdGeneral] = parseInt(currentIdSub.replace( /^\D+/g, ''));
+    console.log(window[currentIdGeneral]);
+    updateInventory();
+    updateEquipped();
     strgLocDat.setItem('plunder', plunder);
     closePayment();
     displayBuyButton();
@@ -58,10 +61,14 @@ function buyItem(){
 //called when user confirms purchase when wrapper pops up
 //actual process of buying item
 function displayBuyButton(){
-    if(parseInt(strgLocDat.getItem(currentIdGeneral))+1 == parseInt(currentIdSub.replace( /^\D+/g, ''))){
+    console.log(window[currentIdGeneral]);
+    if(inventoryJSON[currentIdGeneral]+1 == parseInt(currentIdSub.replace( /^\D+/g, ''))){
         document.getElementById('equipAction').innerHTML = textDat['general'][currentIdGeneral][0][currentIdSub][2] + " gold";
         document.getElementById('equipAction').style.backgroundColor = null;
-    }else if(parseInt(strgLocDat.getItem(currentIdGeneral)) > parseInt(currentIdSub.replace( /^\D+/g, ''))-1){
+    }else if(equippedJSON[currentIdGeneral] == parseInt(currentIdSub.replace( /^\D+/g, ''))){
+        document.getElementById('equipAction').innerHTML = "Equipped";
+        document.getElementById('equipAction').style.backgroundColor = "green";
+    }else if(inventoryJSON[currentIdGeneral] > parseInt(currentIdSub.replace( /^\D+/g, ''))-1){
         document.getElementById('equipAction').innerHTML = "Equip";
         document.getElementById('equipAction').style.backgroundColor = "#5eaf4f";
     }
@@ -72,7 +79,9 @@ function displayBuyButton(){
 }
 //changes buy button (can buy, price, can't buy)
 function equipItem(){
-    
+    window[currentIdGeneral] = parseInt(currentIdSub.replace( /^\D+/g, ''));
+    updateEquipped();
+    displayBuyButton();
 }
 //when user presses equip
 function closePayment(){
@@ -86,7 +95,6 @@ function loadEquipActionDiv(id){
 //called every time a new sub is selected
 function canBuyEquip(){
     price = textDat['general'][currentIdGeneral][0][currentIdSub][2];
-    console.log(price);
     if(document.getElementById('equipAction').innerHTML.valueOf() === "Equip"){
         equipItem();
     }else if(document.getElementById('equipAction').innerHTML.valueOf() === "Locked"){

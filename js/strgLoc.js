@@ -1,6 +1,17 @@
 var strgLocDat = window.localStorage;
 
-var cannonDamage, cannonRange, moreCannons, rateOfFire, shootFast, fasterBoat, rudder, defense, plunder, date;
+var cannonDamage, cannonRange, moreCannons, rateOfFire, shootFast, fasterBoat, rudder, defense, plunder, date, equippedJSON, inventoryJSON;
+
+var baseItemsJSON = {
+    "cannonDamage" : 1,
+    "cannonRange" : 1,
+    "moreCannons" : 1,
+    "rateOfFire" : 1,
+    "shootFast" : 1,
+    "fasterBoat" : 1,
+    "rudder" : 1,
+    "defense" : 1
+}
 
 function firstTimeLoad(){
     if(strgLocDat.getItem('loadBefore') == 1){
@@ -10,14 +21,9 @@ function firstTimeLoad(){
     }
 }
 function setUserData(){
-    strgLocDat.setItem('cannonDamage', 1);
-    strgLocDat.setItem('cannonRange', 1);
-    strgLocDat.setItem('moreCannons', 1);
-    strgLocDat.setItem('rateOfFire', 1);
-    strgLocDat.setItem('shootFast', 1);
-    strgLocDat.setItem('fasterBoat', 1);
-    strgLocDat.setItem('rudder', 1);
-    strgLocDat.setItem('defense', 1);
+    strgLocDat.setItem('inventory', JSON.stringify(baseItemsJSON));
+    strgLocDat.setItem('equipped', JSON.stringify(baseItemsJSON));
+    
     strgLocDat.setItem('plunder', 500);
     var d = new Date();
     strgLocDat.setItem('dateLogged', d.getDate());
@@ -25,15 +31,38 @@ function setUserData(){
     retrieveUserData();
 }
 function retrieveUserData(){
-    cannonDamage = strgLocDat.getItem('cannonDamage');
-    cannonRange = strgLocDat.getItem('cannonRange');
-    moreCannons = strgLocDat.getItem('moreCannons');
-    rateOfFire = strgLocDat.getItem('rateOfFire');
-    shootFast = strgLocDat.getItem('shootFast');
-    fasterBoat = strgLocDat.getItem('fasterBoat');
-    rudder = strgLocDat.getItem('rudder');
-    defense = strgLocDat.getItem('defense');
-    plunder = strgLocDat.getItem('plunder'); 
-    plunder = parseInt(plunder);
+    equippedJSON = JSON.parse(strgLocDat.getItem('equipped'));
+    inventoryJSON = JSON.parse(strgLocDat.getItem('inventory'));
+    cannonDamage = equippedJSON["cannonDamage"];
+    cannonRange = equippedJSON["cannonRange"];
+    moreCannons = equippedJSON["moreCannons"];
+    rateOfFire = equippedJSON["rateOfFire"];
+    shootFast = equippedJSON["shootFast"];
+    fasterBoat = equippedJSON["fasterBoat"];
+    rudder = equippedJSON["rudder"];
+    defense = equippedJSON["defense"];
+    plunder = parseInt(strgLocDat.getItem('plunder')); 
     date = strgLocDat.getItem('dateLogged');
+}
+function updateEquipped(){
+    equippedJSON["cannonDamage"] = cannonDamage;
+    equippedJSON["cannonRange"] = cannonRange;
+    equippedJSON["moreCannons"] = moreCannons;
+    equippedJSON["rateOfFire"] = rateOfFire;
+    equippedJSON["shootFast"] = shootFast;
+    equippedJSON["fasterBoat"] = fasterBoat;
+    equippedJSON["rudder"] = rudder;
+    equippedJSON["defense"] = defense;
+    strgLocDat.setItem('equipped', JSON.stringify(equippedJSON));
+}
+function updateInventory(){
+    inventoryJSON["cannonDamage"] = cannonDamage;
+    inventoryJSON["cannonRange"] = cannonRange;
+    inventoryJSON["moreCannons"] = moreCannons;
+    inventoryJSON["rateOfFire"] = rateOfFire;
+    inventoryJSON["shootFast"] = shootFast;
+    inventoryJSON["fasterBoat"] = fasterBoat;
+    inventoryJSON["rudder"] = rudder;
+    inventoryJSON["defense"] = defense;
+    strgLocDat.setItem('inventory', JSON.stringify(inventoryJSON));
 }
