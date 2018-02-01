@@ -18,6 +18,10 @@ body{
     background-image: url("../images/equipPicture/a1.png");
     height: 25vh;
     margin-bottom: 5vh;
+    background-size: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: pixelated;
     background-repeat: no-repeat;
     background-position: center;
 }

@@ -1,10 +1,19 @@
-var idListGeneral = ['cannonDamage', 'cannonRange', 'moreCannons', 'rateOfFire', 'shootFast', 'fasterBoat', 'rudder', 'defense'];
+var idListGeneral = ['cannonDamage', 'cannonRange', 'rateOfFire', 'shootFast', 'fasterBoat', 'rudder', 'defense'];
 
-var idListSub = [ 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'b1', 'b2', 'b3', 'b4', 'b5', 'c1', 'c2', 'c3', 'c4', 'c5', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'e1', 'e2', 'e3', 'e4', 'e5', 'f1', 'f2', 'f3', 'f4', 'g1', 'g2', 'g3', 'g4', 'g5', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+var idListSub = [ 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'b1', 'b2', 'b3', 'b4', 'b5', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'e1', 'e2', 'e3', 'e4', 'e5', 'f1', 'f2', 'f3', 'f4', 'g1', 'g2', 'g3', 'g4', 'g5', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
 
-var currentIdGeneral;
-var currentIdSub;
-var price;
+var generalSubKeyValuePair = {
+    "cannonDamage": "a1",
+    "cannonRange": "b1",
+    "moreCannons": "c1",
+    "rateOfFire": "d1",
+    "shootFast": "e1",
+    "fasterBoat": "f1",
+    "rudder": "g1",
+    "defense": "h1",
+}
+
+var currentIdGeneral, currentIdSub, price;
 
 function loadCustomize(){
     var subs = document.getElementById('subs').children;
@@ -12,6 +21,7 @@ function loadCustomize(){
         subs[i].style.display = 'none';
     }
     firstTimeLoad();
+    changeSelected('cannonDamage');
     displayPlunder();
 }
 function changeSelected(id){
@@ -28,6 +38,8 @@ function changeSelected(id){
     changeSub.display = 'block';
     change.backgroundColor  = '#9b805e';
     change.border = '1vw solid grey';
+    changeSubSelected(generalSubKeyValuePair[id]);
+    
 }
 function changeSubSelected(id){
     for(i = 0; i < idListSub.length; i++){
@@ -39,9 +51,9 @@ function changeSubSelected(id){
     change.backgroundColor  = '#9b805e';
     change.border = '1vw solid grey';
     currentIdSub = id;
-    changeTextsDescription();//stats and description
-    displayBuyButton();//buy button
-    loadEquipActionDiv(id);//image
+    changeTextsDescription();   //stats and description
+    displayBuyButton();         //buy button
+    loadEquipActionDiv(id);     //image
 }
 function displayPlunder(){
     document.getElementById('displayPlunder').innerHTML = " " + plunder;
@@ -50,7 +62,6 @@ function displayPlunder(){
 function buyItem(){
     plunder -= price;
     window[currentIdGeneral] = parseInt(currentIdSub.replace( /^\D+/g, ''));
-    console.log(window[currentIdGeneral]);
     updateInventory();
     updateEquipped();
     strgLocDat.setItem('plunder', plunder);
@@ -61,7 +72,6 @@ function buyItem(){
 //called when user confirms purchase when wrapper pops up
 //actual process of buying item
 function displayBuyButton(){
-    console.log(window[currentIdGeneral]);
     if(inventoryJSON[currentIdGeneral]+1 == parseInt(currentIdSub.replace( /^\D+/g, ''))){
         document.getElementById('equipAction').innerHTML = textDat['general'][currentIdGeneral][0][currentIdSub][2] + " gold";
         document.getElementById('equipAction').style.backgroundColor = null;
@@ -97,6 +107,8 @@ function canBuyEquip(){
     price = textDat['general'][currentIdGeneral][0][currentIdSub][2];
     if(document.getElementById('equipAction').innerHTML.valueOf() === "Equip"){
         equipItem();
+    }else if(document.getElementById('equipAction').innerHTML.valueOf() === "Equipped"){
+        alert("You already have this equipped");
     }else if(document.getElementById('equipAction').innerHTML.valueOf() === "Locked"){
         alert("You must buy/have the previous upgrade before you can buy this upgrade.");
     }else if(plunder >= price){

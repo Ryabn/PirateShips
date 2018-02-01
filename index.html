@@ -2,9 +2,10 @@
 
 <html lang="en_US">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UTF-8"/>
         <title>Pirate Battles</title>
-        <link rel="stylesheet" type="text/css" href="css/battleMode.css">
+        <link rel="stylesheet" type="text/css" href="css/battleMode.css"/>
+        <script src="js/mainMenu.js"></script>
     </head>
     <body>
         <a href="battleMode.html">
@@ -19,13 +20,11 @@
         </a>
         <a href="options.html">
             <div class="homeButtons">
-                <h1>Options</h1>
+                <h1>How To Play</h1>
             </div>
         </a>
-        <a href="getGold.html">
-            <div class="homeButtons">
-                <h1>Get Gold</h1>
-            </div>
-        </a>
+        <div id="needInternet" class="homeButtons" onclick="promptInternetAccess()">
+            <h1>Get Gold</h1>
+        </div>
     </body>
 </html>

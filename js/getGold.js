@@ -5,6 +5,7 @@ function getFreeDailyGold(){
         strgLocDat.setItem('plunder', plunder);
         date = d.getDate();
         alert("Here yar go! Have 100 free gold. Come back tomorrow for more free gold");
+        strgLocDat.setItem('dateLogged', date);
     }else{
         alert("You can only get the daily loot once a day!");
     }

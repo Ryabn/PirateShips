@@ -6,4 +6,103 @@ body{
     margin: 0;
     background-color: #4d73bc;
     overflow: hidden;
+    font-family: Macondo;
+}
+#health{
+    background-color: green;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 8vh;
+}
+.interface{
+    border: 2vh solid #682d00;   
+    top: 0;
+    height: 96vh;
+    position: fixed;
+    width: calc(100vw - 4vh);
+}
+#LevelDescription{
+    font-size: 10vh;
+    float:left;
+    color: white;
+    text-align: center;
+    width: 25vw;
+}
+#innerBorder{
+    position: fixed;
+    border: 1vh solid black;
+    top: 2vh;
+    left: 2vh;
+    height: 79vh;
+    width: calc(100vw - 6vh);
+}
+#endingGameWrapper{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    z-index: 1000;
+    display: block; 
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.confirmationButton{
+    float: left;
+    margin-left: 4vw;
+}
+.tryAgain{
+    float: right;
+    margin-right: 4vw;
+}
+.endingButton{
+    padding: 2vh 2vw 2vh 2vw;
+    border-radius: 5vw;
+    background-color: #9b805e;
+}
+.displayScore{
+    border: 2px solid black;
+    background-color: burlywood;
+    border-radius: 5px;
+    position: fixed;
+    text-align: center;
+    margin: 25vh 0 0 30vw;
+    height: 40vh;
+    width: 40vw;
+    padding: 3vh;
+}
+.defenseBar{
+    background-color: grey;
+    border: 1vh solid black;
+    height: 10vh;
+    width: calc(45vw - 22vh);
+    float: left;
+}
+.userData{
+    padding: 2.5vh;
+    position: fixed;
+    background-color: #682d00;
+    height: 15vh;
+    width: 100vw;
+    top: 83vh;
+}
+.slider{
+    width: 30vw;
+    padding: 4vh;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
 }
