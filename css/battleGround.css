@@ -16,10 +16,11 @@ body{
     font-size: 8vh;
 }
 .interface{
-    border: 2vh solid #682d00;   
-    top: 0;
-    height: 96vh;
     position: fixed;
+    border: 2vh solid #682d00;   
+    top: 0px;
+    left: 0px;
+    height: 96vh;
     width: calc(100vw - 4vh);
 }
 #LevelDescription{
@@ -27,7 +28,7 @@ body{
     float:left;
     color: white;
     text-align: center;
-    width: 25vw;
+    width: 20vw;
 }
 #innerBorder{
     position: fixed;
@@ -43,8 +44,15 @@ body{
     width: 100vw;
     top: 0;
     z-index: 1000;
-    display: block; 
+    display: none; 
     background-color: rgba(0, 0, 0, 0.4);
+}
+#finalScore{
+    background-color: white;
+    font-size: 7vh;
+    padding: 2vh;
+    border-radius: 1vh;
+    margin-bottom: 5vh;
 }
 .confirmationButton{
     float: left;
@@ -65,7 +73,7 @@ body{
     border-radius: 5px;
     position: fixed;
     text-align: center;
-    margin: 25vh 0 0 30vw;
+    margin: 20vh 0 0 27vw;
     height: 40vh;
     width: 40vw;
     padding: 3vh;
@@ -78,16 +86,17 @@ body{
     float: left;
 }
 .userData{
-    padding: 2.5vh;
+    padding: 2vh;
     position: fixed;
     background-color: #682d00;
-    height: 15vh;
+    height: 13vh;
     width: 100vw;
     top: 83vh;
 }
 .slider{
-    width: 30vw;
+    width: 28vw;
     padding: 4vh;
+    padding-left: 5vw;
 }
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;

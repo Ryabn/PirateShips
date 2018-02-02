@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 
-<html lang="en_US">
+<html lang="en-US">
     <head>
         <meta charset="UTF-8">
         <title>Battle</title>
         <link rel="stylesheet" type="text/css" href="css/battleGround.css">
-        <script src="js/battleGround.js"></script>
         <script src="js/strgLoc.js"></script>
-        <script src ="js/battleGroundCampaign.js"></script>
+        <script src="js/battleGround.js"></script>
+        <script src="js/battleGroundCampaign.js"></script>
     </head>
-    <body onload="startGame()">
+    <body onload="firstTimeLoad(); startGame(); startNewRound();">
+        <div class="interface">
+            <div class="userData">
+                <div id="LevelDescription">
+                    Lv ???
+                </div>
+                <div class="defenseBar">
+                    <div id="health">
+                    </div>
+                </div>
+                <div class="speed">
+                    <input type="range" min="30" max="100" value="60" class="slider" id="playerSpeed">
+                </div>
+            </div>
+            <div id="innerBorder">
+            </div>
+        </div>
+        <div id="endingGameWrapper">
+            <div class="displayScore">
+                <div id="finalScore">
+                    Level Complete!
+                    <br>
+                    Stars 
+                </div>
+                <div class="confirmationButton endingButton" onclick="backToHome()">
+                    Go Home
+                </div>
+                <div class="tryAgain endingButton" onclick="location.reload();">
+                    Try Again
+                </div>
+            </div>
+        </div>
     </body>
 </html>

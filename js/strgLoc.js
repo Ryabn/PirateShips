@@ -1,6 +1,6 @@
 var strgLocDat = window.localStorage;
 
-var cannonDamage, cannonRange, moreCannons, rateOfFire, shootFast, fasterBoat, rudder, defense, plunder, date, equippedJSON, inventoryJSON;
+var cannonDamage, cannonRange, moreCannons, rateOfFire, shootFast, fasterBoat, rudder, defense, plunder, date, equippedJSON, inventoryJSON, highScore;
 
 var baseItemsJSON = {
     "cannonDamage" : 5,
@@ -21,6 +21,7 @@ function firstTimeLoad(){
     }
 }
 function setUserData(){
+    strgLocDat.setItem('endlessScore', 0);
     strgLocDat.setItem('inventory', JSON.stringify(baseItemsJSON));
     strgLocDat.setItem('equipped', JSON.stringify(baseItemsJSON));
     strgLocDat.setItem('plunder', 500);
@@ -41,6 +42,7 @@ function retrieveUserData(){
     defense = equippedJSON["defense"];
     plunder = parseInt(strgLocDat.getItem('plunder')); 
     date = strgLocDat.getItem('dateLogged');
+    highScore = parseInt(strgLocDat.getItem('endlessScore'));
 }
 function updateEquipped(){
     equippedJSON["cannonDamage"] = cannonDamage;

@@ -1,18 +1,28 @@
-var level = 1;
+var level = 0;
 
-function endOfRound(){
-    level++;
-    startNewRound();
-}
 function startNewRound(){
     changeLevel();
+    generateEnemies();
 }
 function changeLevel(){
+    level++;
     document.getElementById('LevelDescription').innerHTML = "Lv. " + level;
 }
 function isDead(){
+    clearInterval(battlefield.interval);
     document.getElementById('endingGameWrapper').style.display = "block";
+    newHighScore();
+    document.getElementById('finalScore').innerHTML = "Rounds Lived: " + level + "<br>" + "High Score: " + highScore;
 }
 function backToHome(){
-    
+    window.location = 'battleMode.html';
+}
+function newHighScore(){
+    if(level > highScore){
+        highScore = level;
+        strgLocDat.setItem('endlessScore', level);
+    }
+}
+function generateEnemies(){
+    //will generate enemies based off of level which is a global variable
 }
