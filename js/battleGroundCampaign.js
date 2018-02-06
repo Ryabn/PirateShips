@@ -1,5 +1,8 @@
 var level = 0;
 
+function endOfRound(){
+    
+}
 function startNewRound(){
     changeLevel();
     generateEnemies();
@@ -18,11 +21,13 @@ function backToHome(){
     window.location = 'battleMode.html';
 }
 function newHighScore(){
-    if(level > highScore){
-        highScore = level;
-        strgLocDat.setItem('endlessScore', level);
-    }
+    
 }
 function generateEnemies(){
-    //will generate enemies based off of level which is a global variable
+    for(var i = 0; i <= Math.ceil(iEnemyCount); i++){
+        var x = generateEnemyCoordinatesX();
+        var y = generateEnemyCoordinatesY();
+        enemyShips.push(new enemyBoat(window.innerHeight*iEnemySize/8, window.innerHeight*iEnemySize/16, './images/boats/boatFinal/enemy1.png', x, y, iEnemyHealth, iEnemyTurn));
+        animateIntoMap(enemyShips[i]);
+    }
 }

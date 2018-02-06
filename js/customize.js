@@ -1,7 +1,5 @@
 var idListGeneral = ['cannonDamage', 'cannonRange', 'rateOfFire', 'shootFast', 'fasterBoat', 'rudder', 'defense'];
-
 var idListSub = [ 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'a7', 'b1', 'b2', 'b3', 'b4', 'b5', 'd1', 'd2', 'd3', 'd4', 'd5', 'd6', 'e1', 'e2', 'e3', 'e4', 'e5', 'f1', 'f2', 'f3', 'f4', 'g1', 'g2', 'g3', 'g4', 'g5', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
-
 var generalSubKeyValuePair = {
     "cannonDamage": "a1",
     "cannonRange": "b1",
@@ -12,9 +10,7 @@ var generalSubKeyValuePair = {
     "rudder": "g1",
     "defense": "h1",
 }
-
 var currentIdGeneral, currentIdSub, price;
-
 function loadCustomize(){
     var subs = document.getElementById('subs').children;
     for (i = 0; i < subs.length; i++) {

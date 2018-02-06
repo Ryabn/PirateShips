@@ -1,0 +1,47 @@
+@font-face{
+    font-family: "Acme";
+    src: url('../fonts/Acme/Acme-Regular.ttf');
+}
+@font-face{
+    font-family: "Macondo";
+    src: url('../fonts/Macondo/Macondo-Regular.ttf');
+}
+body{
+    margin: 0;
+    background-color: #682d00;
+}
+#levelSelect{
+}
+#levelName{
+}
+#leftArrow{
+    left: 3vw;
+}
+#rightArrow{
+    right: 3vw;
+}
+.levelText{
+    font-size: 15vh;
+    text-align: center;
+    color: white;
+}
+.levelCard{
+    font-family: "Macondo";
+    position: fixed;
+    width: calc(70vw - 16vh);
+    height: 54vh;
+    background-color: rgba(0, 0, 255, 0.7);
+    top: 15vh;
+    box-shadow: -5px -5px 0 grey;
+    padding: 8vh;
+    left: 15vw;
+}
+.arrowButton{
+    position: fixed;
+    top: calc( 50vh - 15vw);
+    font-family: "Acme";
+    font-weight: bold;
+    font-size: 20vw;
+    color: white;
+    width: 10vw;
+}

@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 
-<html lang="en-US">
+<html lang="en_US">
     <head>
         <meta charset="UTF-8">
-        <title>Battle</title>
-        <link rel="stylesheet" type="text/css" href="css/battleGround.css">
+        <title>
+            Select Map
+        </title>
+        <link rel="stylesheet" type="text/css" href="css/campaignSelection.css">
         <script src="js/strgLoc.js"></script>
-        <script src="js/battleGround.js"></script>
-        <script src="js/battleGroundEndless.js"></script>
+        <script src="js/campaignSelection.js"></script>
     </head>
-    <body onload="firstTimeLoad();">
-        <div class="interface">
+    <body onload="firstTimeLoad(); animateOutLeft(); animateInLeft();">
+        <div class="levelSelectBackground">
+            <div id="levelSelected" class="levelCard">
+                <div id="levelName" class="levelText">
+                    Level 1
+                </div>
+            </div>
+            <div id="levelSelected2" class="levelCard">
+                <div id="levelName2" class="levelText">
+                    Level 2
+                </div>
+            </div>
+            <div id="leftArrow" class="arrowButton">
+                &lt;
+            </div>
+            <div id="rightArrow" class="arrowButton">
+                &gt;
+            </div>
             
         </div>
     </body>

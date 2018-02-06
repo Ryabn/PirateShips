@@ -4,37 +4,44 @@ var textDat = {
             "a1": [
                 "Just your regular trusty ol' cannon. Does what it needs to and never complains(sometimes betrays family)",
                 "Damage : 10",
-                0
+                0,
+                10
             ],
             "a2": [
                 "It's the Standard Cannon's older brother. If Standard Cannon was Fredo Corleone, this is Sonny Corleone.",
                 "Damage : 20",
-                50
+                50,
+                20
             ],
             "a3": [
                 "It's the youngest brother of all the cannons. If those were Fredo and Sonny, this one would be Vito",
                 "Damage : 40",
-                125
+                125,
+                40
             ],
             "a4": [
                 "Tis' a small gun. But remember, size isn't everything. Remember the nosiy cricket from MIB?",
                 "Damage : 60",
-                150
+                150,
+                60
             ],
             "a5": [
                 "Call this one the money maker. It shoots out coins, but only pennies so no one's trying to pick them up.",
                 "Damage : 100, Style: +5",
-                350
+                350,
+                100
             ],
             "a6": [
                 "Please don't sue me for all these movie references. I'm only an indie game developer. This is a steel gun.",
                 "Damage : 150",
-                650
+                650,
+                150
             ],
             "a7": [
                 "I wish I could make this shoot out Terry Crews but I don't want to copyright infringe. Big muscle guns.",
                 "Damage : 220",
-                1000
+                1000,
+                220
             ]
         }
         ],
@@ -42,27 +49,32 @@ var textDat = {
             "b1": [
                 "We just carved some holes out so the cannons can shoot",
                 "Default Range",
-                0
+                0,
+                150
             ],
             "b2": [
                 "I've got the beast in my sights - Some hearthstone voice actor",
-                "Range : +5",
-                50
+                "Range : +25",
+                50,
+                175
             ],
             "b3": [
                 "Captains been missing an eye for quite sometime now. The crew wants to buy him surgery for Christmas.",
-                "Range : +5",
-                100
+                "Range : +25",
+                100,
+                200
             ],
             "b4": [
                 "We got a crows nest. I think that finally makes us real pirates. CAP'N! I CAN SEE FARTHER NOW",
-                "Range : +15",
-                350
+                "Range : +100",
+                350,
+                300
             ],
             "b5": [
                 "Ya know how in movies they put silencers? Well we made one for our cannons. It works like magic.",
-                "Range : +25",
-                950
+                "Range : +150",
+                950,
+                450
             ]
         }],
         "moreCannons": [{
@@ -154,23 +166,27 @@ var textDat = {
         "fasterBoat": [{
             "f1": [
                 "Our boat didn't move before but now with these paddles, we're on our way to loot some villages!",
-                "Speed: 0.5",
-                0
+                "Speed: 0.75",
+                0,
+                0.75
             ],
             "f2": [
                 "So our paddles were really slow... so we took some inspiration from those vikings and now we got bigger paddles.",
-                "Speed: 0.75",
-                200
+                "Speed: 1",
+                200,
+                1
             ],
             "f3": [
                 "Apparently, boats need to have these sails to go faster. I didn't know that.",
-                "Speed: 1",
-                500
+                "Speed: 1.5",
+                500,
+                1.5
             ],
             "f4": [
                 "I think this is what Noah used to power his ark. Like this thing is massive",
-                "Speed: 1.5",
-                1000
+                "Speed: 2.5",
+                1000,
+                2.5
             ]
         }],
         "rudder": [{

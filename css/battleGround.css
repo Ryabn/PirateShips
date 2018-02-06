@@ -6,7 +6,7 @@ body{
     margin: 0;
     background-color: #4d73bc;
     overflow: hidden;
-    font-family: Macondo;
+    font-family: "Macondo";
 }
 #health{
     background-color: green;
