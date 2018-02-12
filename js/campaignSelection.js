@@ -8,7 +8,6 @@ function prevCampaign(){
     
 }
 function animateOutLeft(){
-    
     aIntOL = setInterval(animOL, 5);
 }
 function animateInLeft(){
@@ -17,6 +16,7 @@ function animateInLeft(){
 function animOL(){
     if(num < -115){
         clearInterval(aIntOL);
+        
     }
     num -= 1;
     document.getElementById('levelSelected').style.left = num + "vw";
@@ -28,3 +28,17 @@ function animIL(){
     num2 -= 1;
     document.getElementById('levelSelected2').style.left = num2 + "vw";
 }
+
+document.addEventListener('keypress', (event) => {
+    const keyName = event.key;
+    switch(keyName){
+        case 'a':
+            animateOutLeft();
+            break;
+        case 'd':
+            animateInLeft();
+            break;
+        default:
+            break;
+    }
+});

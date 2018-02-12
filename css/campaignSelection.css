@@ -8,11 +8,13 @@
 }
 body{
     margin: 0;
-    background-color: #682d00;
+    background-color: skyblue;
 }
 #levelSelect{
+    
 }
 #levelName{
+    
 }
 #leftArrow{
     left: 3vw;
@@ -30,7 +32,7 @@ body{
     position: fixed;
     width: calc(70vw - 16vh);
     height: 54vh;
-    background-color: rgba(0, 0, 255, 0.7);
+    background-color: rgba(220, 100, 215, 0.7);
     top: 15vh;
     box-shadow: -5px -5px 0 grey;
     padding: 8vh;
